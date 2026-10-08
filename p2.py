@@ -10,7 +10,7 @@ arr = []
 for i in range(rows):
     r = []
     for j in range(cols):
-        rand = random.random()   
+        rand = random.random()    
         r.append(rand)
     arr.append(r)
 
