@@ -1,6 +1,6 @@
 import numpy as np
 
-n = int(input("Enter number of Element to enter in Array: "))
+n = int(input("Enter number of Elements to enter in Array: "))
 
 arr = []
 for i in range(n):
