@@ -1,31 +1,48 @@
 import pandas as pd
 import numpy as np
 
+n = int(input("Enter number of Rows to Enter in DataFrame :"))
+
+stuIds = []
+names = []
+ages = []
+percentage = []
+
+for i in range(n):
+    stuId = input(f"Enter Id of student {i+1}: ")
+    name = input(f"Enter Name of student {i+1}: ")
+    age = int(input(f"Enter Age of student {i+1}: "))
+    per = float(input(f"Enter Percentage of student {i+1}: "))
+    
+    print("\n")
+    
+    stuIds.append(stuId)
+    names.append(name)
+    ages.append(age)
+    percentage.append(per)
+
 data = {
-    "Name": ["A", "B", "C", "D", "E", "F", "G"],
-    "Marks": [50, 52, 49, 51, 500, 48, 47]  
+    "ID": stuIds,
+    "Name": names,
+    "Age": ages,
+    "Percentage": percentage
 }
 
 df = pd.DataFrame(data)
 
-print("Original DataFrame:")
-print(df)
+mean = df["Percentage"].mean()
+stdDvt = df["Percentage"].std()
 
-mean = df["Marks"].mean()
-std = df["Marks"].std()
+lowerLim = mean - 2 * stdDvt
+upperLim = mean + 2 * stdDvt
 
-lower_limit = mean - 2 * std
-upper_limit = mean + 2 * std
+print("Mean:", mean)
+print("Standard Deviation : ", stdDvt)
+print("Lower Limit:", lowerLim)
+print("Upper Limit:", upperLim)
 
-print("\nMean:", mean)
-print("Standard Deviation:", std)
-print("Lower Limit:", lower_limit)
-print("Upper Limit:", upper_limit)
+outliers = df[(df["Percentage"] < lowerLim) | (df["Percentage"] > upperLim)]
+print(f"\nDetected Outliers :\n{outliers}")
 
-outliers = df[(df["Marks"] < lower_limit) | (df["Marks"] > upper_limit)]
-print("\nDetected Outliers:")
-print(outliers)
-
-cleaned_df = df[(df["Marks"] >= lower_limit) & (df["Marks"] <= upper_limit)]
-print("\nDataFrame After Removing Outliers:")
-print(cleaned_df)
+newDf = df[(df["Percentage"] >= lowerLim) & (df["Percentage"] <= upperLim)]
+print(f"\nDataFrame After Removing Outliers : \n{newDf}")
