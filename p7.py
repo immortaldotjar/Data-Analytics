@@ -31,3 +31,6 @@ df = pd.DataFrame(data)
 
 print(f"\nDataFrame : \n{df}")
 
+sortDf = df.sort_values(by="ID")
+
+print(f"\nDataFrame Sorted by ID :\n {sortDf}")
