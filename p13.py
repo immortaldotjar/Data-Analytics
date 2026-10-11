@@ -20,4 +20,4 @@ chi_square = np.sum(((observed - expected) ** 2) / expected)
 
 print(f"Observed Frequencies : {observed}")
 print(f"Expected Frequencies : {expected}")
-print(f"\nChi-Square Value = {chi_square:.4f}")
+print(f"\nChi-Square Value = {chi_square}")
