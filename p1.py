@@ -1,51 +1,53 @@
-import numpy as np
+# Write a program to create a NumPy array and Access and manipulate elements in the array.
 
+import numpy as np #importing nupmy library
 
-npArr = np.array([])
-menu = input("want to enter the menu (y/n) : ")
+npArr = np.array([]) #creating numpy array
 
-while(menu == 'y'):
+menu = input("want to enter the menu (y/n) : ") #input for opening menu
 
-    arr = []
+while(menu == 'y'): #loop run when user enter yes
+
+    arr = [] #for storing values
     
-    def inputArr():
-        global npArr 
+    def inputArr(): 
+        global npArr #accessing numpy array
         
-        n = int(input("Enter total number of values to be input in array : "))
+        n = int(input("Enter total number of values to be input in array : ")) # input for size of list
         i = 1
 
         while(i <= n):
-            num = input(f"Enter any element for {i} : ")
-            arr.append(num)
+            num = input(f"Enter any element for {i} : ") #input for taking values from user for the list
+            arr.append(num) #adding value in list 
             i += 1
 
         npArr = np.array(arr)
-        print(npArr)
+        print(npArr) 
         return npArr
 
     def accessArr():
-        global npArr
+        global npArr #accessing numpy array
         
+        #condition if user directly chooses accessing array before entering elements in array
         if len(npArr) == 0:
             npArr = inputArr()
-            
-            
+        
         def accessIndex():
             index = int(input("Enter Index to assess Elements : "))
-            print(f"{npArr[index]}")
+            print(f"{npArr[index]}")  # getting a specific indexed value
 
         def accessAllElems():
             for i,ele in enumerate(npArr):
-                print(f"Element {ele} = Index {i}")
+                print(f"Element {ele} = Index {i}") #getting all indexs with values
                                 
         ch = int(input("----Menu----\n1.Access First Elementof Array\n2.Access Last Element of Array\n3.Access other element by Indexing\n4.Access All elements with Index\n\n"))
         print(npArr)
 
         match ch:
             case 1:
-                print(f"{npArr[0]}")
+                print(f"{npArr[0]}") #for first element of list
             case 2:
-                print(f"{npArr[-1]}")
+                print(f"{npArr[-1]}") #for last element of list
             case 3:
                 accessIndex()
             case 4:
@@ -54,7 +56,7 @@ while(menu == 'y'):
                 print("Choose any option from menu!")
     
     def manipulateArr():
-        global npArr
+        global npArr #accessing numpy array
             
         if len(npArr) == 0:
             npArr = inputArr()
@@ -63,7 +65,7 @@ while(menu == 'y'):
         print(npArr)
         match ch:
             case 1:
-                print(f"{np.sum(npArr.astype(int))}")
+                print(f"{np.sum(npArr.astype(int))}") #
             case 2:
                 print(f"{np.flip(npArr)}")
             case 3:
@@ -79,7 +81,7 @@ while(menu == 'y'):
 
     match opt:
         case 1:
-            inputArr()
+            inputArr() 
         case 2:
             accessArr()
         case 3:

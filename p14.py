@@ -1,3 +1,5 @@
+# Create a Program we use various functions in NumPy library to carry out the ANOVA test. 
+
 import numpy as np
 
 n = int(input("Enter number of groups: "))

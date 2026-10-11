@@ -1,3 +1,5 @@
+# Create a Program we use various functions in NumPy library to carry out the chi-square test. 
+
 import numpy as np
 
 n = int(input("Enter number of categories: "))

@@ -1,12 +1,14 @@
-import numpy as np
+# Write a Program to generate a random array of 50 numbers having mean 110 and standard deviation 15.
 
-mean = 110
-stdDvt = 15
-size = 50
+import numpy as np #importing numpy library
 
-ranArr = np.random.normal(mean, stdDvt, size)
+mean = 110 #fixed mean
+stdDvt = 15 #fixed standard deviation  
+size = 50  
 
-print(f"Random Array of 50 Numbers :\n {ranArr} \n")
+ranArr = np.random.normal(mean, stdDvt, size) #randomly generates Gaussian distribution array of size 50 from the given mean and standard deviation 
 
-print(f"Mean : {np.mean(ranArr)}")
-print(f"Standard Deviation : {np.std(ranArr)}")
+print(f"Random Array of 50 Numbers :\n {ranArr} \n") 
+
+print(f"Mean : {np.mean(ranArr)}") #prints mean of the array
+print(f"Standard Deviation : {np.std(ranArr)}") #prints standard deviation of array

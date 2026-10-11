@@ -1,11 +1,12 @@
-import numpy as np
+# Write a Program to create a 5x5 2D array for random numbers between 0 and 1 using NumPy.
+
+import numpy as np #importing numpy library
 import random  
 
-rows = int(input("Enter number of rows : ")) 
-cols = int(input("Enter number of columns : ")) 
+rows = int(input("Enter number of rows : ")) #for total rows
+cols = int(input("Enter number of columns : ")) #for total columns
 
-arr = []
-
+arr = [] 
 
 for i in range(rows):
     r = []
@@ -14,7 +15,7 @@ for i in range(rows):
         r.append(rand)
     arr.append(r)
 
-npArr = np.array(arr)
+npArr = np.array(arr) #converting to numpy array
 
 print(f"\n{rows}x{cols} 2D Array : \n {npArr}")
 

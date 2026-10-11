@@ -1,12 +1,14 @@
-import pandas as pd
+# Write a Program to Reading a CSV File and reading with Specific Columns and rows.
 
-df = pd.read_csv("stuData.csv")
+import pandas as pd #importing pandas library
 
-print(f"Dataframe : \n{df}")
+df = pd.read_csv("stuData.csv") # reading student data csv file and conveting is to dataframe
 
-dfCols = pd.read_csv("stuData.csv",usecols=["ID" ,"Name" ,"Age"])
+print(f"Dataframe : \n{df}") 
 
-dfRows = pd.read_csv("stuData.csv",nrows=3)
+dfCols = pd.read_csv("stuData.csv",usecols=["ID" ,"Name" ,"Age"]) # reading student data csv file and conveting is to dataframe with specific columns
+
+dfRows = pd.read_csv("stuData.csv",nrows=3) # reading student data csv file and conveting is to dataframe with specific rows
 
 print(f"\nDataframe with Specific Columns : \n{dfCols}")
 
