@@ -8,7 +8,7 @@ ages = []
 percentage = []
 
 for i in range(n):
-    stuId = input(f"Enter Id of student {i+1}: ")
+    stuId = int(input(f"Enter Id of student {i+1}: "))
     name = input(f"Enter Name of student {i+1}: ")
     age = int(input(f"Enter Age of student {i+1}: "))
     per = float(input(f"Enter Percentage of student {i+1}: "))
@@ -29,7 +29,7 @@ data = {
 
 df = pd.DataFrame(data)
 
-print(f"\nDataFrame : \n{df}")
+print(f"DataFrame : \n{df}")
 
 sortDf = df.sort_values(by="ID")
 
