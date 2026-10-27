@@ -11,10 +11,10 @@ ages = [] # holds ages of students
 percentage = [] # holds percentage of students
  
 for i in range(n):
-    stuId = int(input(f"Enter Id of student {i+1}: ")) # input for id
+    stuId = input(f"Enter Id of student {i+1}: ") # input for id
     name = input(f"Enter Name of student {i+1}: ") # input for name
-    age = int(input(f"Enter Age of student {i+1}: ")) # input for age
-    per = float(input(f"Enter Percentage of student {i+1}: ")) # input for percentage
+    age = input(f"Enter Age of student {i+1}: ") # input for age
+    per = input(f"Enter Percentage of student {i+1}: ") # input for percentage
     
     print("\n")
     
